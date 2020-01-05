@@ -1,0 +1,32 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 2,
+	"name": "Get video pỏn hub one click",
+	"version": "0.2",
+	"description": "extension dowload video đơn giản, đưa JS vào trang để lấy thông tin và trích xuất các liên kết để tải xuống.",
+	"author": "truongsofm",
+	"icons":
+	{
+		"16":"./img/ph16.png",
+		"48": "./img/ph48.png",
+		"128": "./img/ph128.png"
+	},
+	"browser_action":
+	{
+		"default_icon": "./img/ph16.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["https://*.pornhub.com/view_video.php?viewkey=*","https://*.pornhubpremium.com/view_video.php?viewkey=*"],
+			"js": ["content-script.js"]
+		}
+	],
+	"homepage_url": "https://truongsofm.blogspot.com",
+	"web_accessible_resources": 
+	[
+		"inject.js"
+	]
+}
